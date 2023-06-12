@@ -11,7 +11,7 @@ export const Link = styled.a`
 
   flex-direction: column;
 `
-export const Title = styled.h1`
+export const Title = styled.p`
   color: ${props => props.color};
   font-weight: 500;
   font-family: roboto;

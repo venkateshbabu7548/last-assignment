@@ -96,7 +96,7 @@ const NotFound = () => {
         />
         <NotFoundHead color="white">Page Not Found</NotFoundHead>
         <NotFoundDes color="#475569">
-          We are sorry,the page you requested could not be found
+          we are sorry,the page you requested could not be found.
         </NotFoundDes>
       </RightCon>
     </Down>
@@ -170,7 +170,7 @@ const NotFound = () => {
         />
         <NotFoundHead color="black">Page Not Found</NotFoundHead>
         <NotFoundDes color="#475569">
-          We are sorry,the page you requested could not be found
+          we are sorry,the page you requested could not be found
         </NotFoundDes>
       </RightCon>
     </Down>

@@ -22,6 +22,7 @@ class Login extends Component {
     username: '',
     password: '',
     errorMsg: '',
+    isChecked: false,
 
     showErrorMsg: false,
   }
@@ -39,7 +40,7 @@ class Login extends Component {
   onSubmitSuccess = jwtToken => {
     const {history} = this.props
     Cookies.set('jwt_token', jwtToken, {expires: 30})
-    history.replace('/home')
+    history.replace('/')
   }
 
   onSubmitFailure = errorMsg => {
@@ -64,8 +65,12 @@ class Login extends Component {
     }
   }
 
+  onClickCheckbox = () => {
+    this.setState(prevState => ({isChecked: !prevState.isChecked}))
+  }
+
   renderDarkMode = () => {
-    const {username, showErrorMsg, password, errorMsg} = this.state
+    const {username, showErrorMsg, password, isChecked, errorMsg} = this.state
     return (
       <LoginContainer bgColor="#1e293b">
         <LoginResp bgColor="#0f0f0f">
@@ -91,7 +96,7 @@ class Login extends Component {
                 PASSWORD
               </Label>
               <InputField
-                type="password"
+                type={isChecked ? 'text' : 'password'}
                 placeholder="Password"
                 value={password}
                 onChange={this.onChangePassword}
@@ -99,7 +104,11 @@ class Login extends Component {
               />
             </EachField>
             <CheckBoxCon>
-              <CheckBox type="checkbox" id="checkbox" />
+              <CheckBox
+                type="checkbox"
+                id="checkbox"
+                onClick={this.onClickCheckbox}
+              />
               <Label htmlFor="checkbox" color="white">
                 Show Password
               </Label>
@@ -113,7 +122,7 @@ class Login extends Component {
   }
 
   renderLightMode = () => {
-    const {username, showErrorMsg, password, errorMsg} = this.state
+    const {username, showErrorMsg, password, isChecked, errorMsg} = this.state
     return (
       <LoginContainer bgColor="white">
         <LoginResp bgColor="white">
@@ -139,7 +148,7 @@ class Login extends Component {
                 PASSWORD
               </Label>
               <InputField
-                type="password"
+                type={isChecked ? 'text' : 'password'}
                 placeholder="Password"
                 value={password}
                 onChange={this.onChangePassword}
@@ -147,7 +156,11 @@ class Login extends Component {
               />
             </EachField>
             <CheckBoxCon>
-              <CheckBox type="checkbox" id="checkbox" />
+              <CheckBox
+                type="checkbox"
+                id="checkbox"
+                onClick={this.onClickCheckbox}
+              />
               <Label htmlFor="checkbox" color="#475569">
                 Show Password
               </Label>
@@ -163,7 +176,7 @@ class Login extends Component {
   render() {
     const token = Cookies.get('jwt_token')
     if (token !== undefined) {
-      ;<Redirect to="/home" />
+      return <Redirect to="/" />
     }
     return (
       <ThemeContext.Consumer>

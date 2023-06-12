@@ -22,9 +22,10 @@ export const LeftCon = styled.div`
 
   background-color: ${props => props.bgColor};
 `
-export const BottomHead = styled.h1`
+export const BottomHead = styled.p`
   color: ${props => props.color};
   font-size: 20px;
+  font-weight: 600;
 `
 export const BottomSec = styled.div`
   display: flex;

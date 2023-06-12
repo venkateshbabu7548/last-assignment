@@ -49,3 +49,35 @@ export const LogoutBtn = styled.button`
   font-weight: 500;
   cursor: pointer;
 `
+export const PopupCon = styled.div`
+  height: 200px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  border: 0;
+  border-radius: 10px;
+  background-color: white;
+`
+export const PopupDes = styled.p`
+  font-weight: 700;
+  font-size: 20px;
+  color: black;
+`
+export const PopupBtnCon = styled.div`
+  display: flex;
+  align-items: center;
+`
+export const PopupBtn = styled.button`
+  cursor: pointer;
+  height: 40px;
+  width: 100px;
+  border: 0;
+  border-radius: 6px;
+  background-color: ${props => props.bgColor};
+  color: ${props => props.color};
+  font-weight: 600;
+  font-size: 20px;
+  margin: 10px;
+`

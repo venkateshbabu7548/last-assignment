@@ -49,6 +49,7 @@ import {
   Description,
   FailureCon,
   FailureImg,
+  Publish,
 } from './styledComponents'
 import {RetryBtn} from '../Home/styledComponents'
 
@@ -134,9 +135,9 @@ class VideoItemDetails extends Component {
     <FailureCon>
       <FailureImg
         src="https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-light-theme-img.png"
-        alt="failure"
+        alt="failure view"
       />
-      <Caution color="black">Opps! Something Went Wrong</Caution>
+      <Caution color="black">Oops! Something Went Wrong</Caution>
       <Des color="#64748b">
         We are having some trouble to complete your request. Please try again.
       </Des>
@@ -150,9 +151,9 @@ class VideoItemDetails extends Component {
     <FailureCon>
       <FailureImg
         src="https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-dark-theme-img.png"
-        alt="failure"
+        alt="failure view"
       />
-      <Caution color="white">Opps! Something Went Wrong</Caution>
+      <Caution color="white">Oops! Something Went Wrong</Caution>
       <Des color="#64748b">
         We are having some trouble to complete your request. Please try again.
       </Des>
@@ -193,7 +194,9 @@ class VideoItemDetails extends Component {
                   <ViewCon>
                     <Views>{`${viewCount} views`}</Views>
                     <TimeCon>
-                      <Time>{time}</Time>
+                      <Time>
+                        <Publish>{time}</Publish>
+                      </Time>
                     </TimeCon>
                   </ViewCon>
                   <LikesCon>
@@ -202,7 +205,7 @@ class VideoItemDetails extends Component {
                         type="button"
                         onClick={this.OnToggleLike}
                         like={isLiked}
-                        color="black"
+                        color="#64748b"
                       >
                         <BiLike fontSize="25" />
                         <Tag>Like</Tag>
@@ -213,7 +216,7 @@ class VideoItemDetails extends Component {
                         type="button"
                         onClick={this.OnToggleDislike}
                         like={isDisliked}
-                        color="black"
+                        color="#64748b"
                       >
                         <BiDislike fontSize="25" />
                         <Tag>Dislike</Tag>
@@ -224,7 +227,7 @@ class VideoItemDetails extends Component {
                         type="button"
                         onClick={onClickSave}
                         like={isSaved}
-                        color="black"
+                        color="#64748b"
                       >
                         <MdPlaylistAdd fontSize="25" />
                         <Tag>Save</Tag>
@@ -234,7 +237,7 @@ class VideoItemDetails extends Component {
                 </SecCon>
                 <Line color="#cbd5e1" />
                 <ChannelCon>
-                  <ChannelLogo src={profileImageUrl} alt="channel" />
+                  <ChannelLogo src={profileImageUrl} alt="channel logo" />
                   <ChannelRightCon>
                     <ChannelTitle color="black">{name}</ChannelTitle>
                     <ChannelSub color="#7e858e">{`${subscriberCount} subscribers`}</ChannelSub>
@@ -264,7 +267,9 @@ class VideoItemDetails extends Component {
                   <ViewCon>
                     <Views>{`${viewCount} views`}</Views>
                     <TimeCon>
-                      <Time>{time}</Time>
+                      <Time>
+                        <Publish>{time}</Publish>
+                      </Time>
                     </TimeCon>
                   </ViewCon>
                   <LikesCon>
@@ -273,7 +278,7 @@ class VideoItemDetails extends Component {
                         type="button"
                         onClick={this.OnToggleLike}
                         like={isLiked}
-                        color="#cccccc"
+                        color="#64748b"
                       >
                         <BiLike fontSize="25" />
                         <Tag>Like</Tag>
@@ -284,7 +289,7 @@ class VideoItemDetails extends Component {
                         type="button"
                         onClick={this.OnToggleDislike}
                         like={isDisliked}
-                        color="#cccccc"
+                        color="#64748b"
                       >
                         <BiDislike fontSize="25" />
                         <Tag>Dislike</Tag>
@@ -295,17 +300,17 @@ class VideoItemDetails extends Component {
                         type="button"
                         onClick={onClickSave}
                         like={isSaved}
-                        color="#cccccc"
+                        color="#64748b"
                       >
                         <MdPlaylistAdd fontSize="25" />
-                        <Tag>Save</Tag>
+                        <Tag>{isSaved ? 'Saved' : 'Save'}</Tag>
                       </Like>
                     </LikeCon>
                   </LikesCon>
                 </SecCon>
                 <Line color="#313131" />
                 <ChannelCon>
-                  <ChannelLogo src={profileImageUrl} alt="channel" />
+                  <ChannelLogo src={profileImageUrl} alt="channel logo" />
                   <ChannelRightCon>
                     <ChannelTitle color="white">{name}</ChannelTitle>
                     <ChannelSub color="#7e858e">{`${subscriberCount} subscribers`}</ChannelSub>
@@ -329,7 +334,7 @@ class VideoItemDetails extends Component {
             }
           }
           const renderLightView = () => (
-            <Down color="#f9f9f9">
+            <Down color="#f9f9f9" data-testid="videoItemDetails">
               <LeftCon bgColor="#f9f9f9">
                 <MenuBarCon>
                   <EachBar color="#475569">
@@ -337,7 +342,7 @@ class VideoItemDetails extends Component {
                       <AiFillHome fontSize={30} />
                     </Icon>
 
-                    <Link href="/home">Home</Link>
+                    <Link href="/">Home</Link>
                   </EachBar>
                   <EachBar color="#475569">
                     <Icon>
@@ -406,7 +411,7 @@ class VideoItemDetails extends Component {
             }
           }
           const renderDarkView = () => (
-            <Down color="#0f0f0f">
+            <Down color="#0f0f0f" data-testid="videoItemDetails">
               <LeftCon bgColor="#231f20">
                 <MenuBarCon>
                   <EachBar>
@@ -414,7 +419,7 @@ class VideoItemDetails extends Component {
                       <AiFillHome fontSize={30} />
                     </Icon>
 
-                    <Link href="/home" color="white">
+                    <Link href="/" color="white">
                       Home
                     </Link>
                   </EachBar>

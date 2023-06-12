@@ -97,7 +97,7 @@ class Gaming extends Component {
     <FailureCon>
       <FailureImg
         src="https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-light-theme-img.png"
-        alt="failure-image"
+        alt="failure view"
       />
       <FailureHead>Oops! Something Went Wrong</FailureHead>
       <FailureDes>
@@ -136,7 +136,7 @@ class Gaming extends Component {
   }
 
   renderDarkView = () => (
-    <Down color="#0f0f0f">
+    <Down color="#0f0f0f" data-testid="gaming">
       <LeftCon bgColor="#231f20">
         <MenuBarCon>
           <EachBar>
@@ -144,7 +144,7 @@ class Gaming extends Component {
               <AiFillHome fontSize={30} />
             </Icon>
 
-            <Link href="/home" color="white">
+            <Link href="/" color="white">
               Home
             </Link>
           </EachBar>
@@ -211,7 +211,7 @@ class Gaming extends Component {
   )
 
   renderLightView = () => (
-    <Down color="#f9f9f9">
+    <Down color="#f9f9f9" data-testid="gaming">
       <LeftCon bgColor="#f9f9f9">
         <MenuBarCon>
           <EachBar color="#475569">
@@ -219,7 +219,7 @@ class Gaming extends Component {
               <AiFillHome fontSize={30} />
             </Icon>
 
-            <Link href="/home">Home</Link>
+            <Link href="/">Home</Link>
           </EachBar>
           <EachBar color="#475569">
             <Icon>

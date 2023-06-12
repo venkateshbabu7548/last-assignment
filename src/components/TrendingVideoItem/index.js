@@ -10,6 +10,7 @@ import {
   ViewsCon,
   YearCon,
   Year,
+  Publish,
 } from './styledComponents'
 
 const TrendingVideoItem = props => {
@@ -24,7 +25,9 @@ const TrendingVideoItem = props => {
       <ViewsCon>
         <Channel>{`${viewCount} views`}</Channel>
         <YearCon>
-          <Year>{time}</Year>
+          <Year>
+            <Publish>{time}</Publish>
+          </Year>
         </YearCon>
       </ViewsCon>
     </ContentCard>
@@ -36,7 +39,9 @@ const TrendingVideoItem = props => {
       <ViewsCon>
         <Channel>{`${viewCount} views`}</Channel>
         <YearCon>
-          <Year>{time}</Year>
+          <Year>
+            <Publish>{time}</Publish>
+          </Year>
         </YearCon>
       </ViewsCon>
     </ContentCard>
@@ -46,13 +51,13 @@ const TrendingVideoItem = props => {
       {value => {
         const {isDarkModeOn} = value
         return (
-          <Link href={`/videos/${id}`}>
-            <VideoItem>
-              <Image src={thumbnailUrl} alt="thumbnail" />
+          <VideoItem>
+            <Link href={`/videos/${id}`}>
+              <Image src={thumbnailUrl} alt="video thumbnail" />
 
               <div>{isDarkModeOn ? renderDarkView() : renderLightView()}</div>
-            </VideoItem>
-          </Link>
+            </Link>
+          </VideoItem>
         )
       }}
     </ThemeContext.Consumer>

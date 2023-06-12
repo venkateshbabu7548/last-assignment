@@ -7,7 +7,7 @@ const GamingVideoItem = props => {
   const renderLightMode = () => (
     <>
       <Link href={`/videos/${id}`}>
-        <Image src={thumbnailUrl} alt="thumbnail" />
+        <Image src={thumbnailUrl} alt="video thumbnail" />
         <Title color="black">{title}</Title>
         <Views color="#475569">{`${viewCount} Watching Worldwide`}</Views>
       </Link>
@@ -16,7 +16,7 @@ const GamingVideoItem = props => {
   const renderDarkMode = () => (
     <>
       <Link href={`/videos/${id}`}>
-        <Image src={thumbnailUrl} alt="thumbnail" />
+        <Image src={thumbnailUrl} alt="video thumbnail" />
         <Title color="white">{title}</Title>
         <Views color="#475569">{`${viewCount} Watching Worldwide`}</Views>
       </Link>

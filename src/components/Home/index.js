@@ -98,7 +98,7 @@ class Home extends Component {
       options,
     )
     const data = await response.json()
-    console.log(data)
+
     if (response.ok === true) {
       this.onSubmitSuccess(data.videos)
     } else {
@@ -150,7 +150,7 @@ class Home extends Component {
     <FailureCon>
       <FailureImg
         src="https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-light-theme-img.png"
-        alt="failure-image"
+        alt="failure view"
       />
       <FailureHead>Oops! Something Went Wrong</FailureHead>
       <FailureDes>
@@ -224,7 +224,7 @@ class Home extends Component {
                 <AiFillHome fontSize={30} />
               </Icon>
 
-              <Link href="/home" color="black" selected>
+              <Link href="/" color="black" selected>
                 Home
               </Link>
             </EachBar>
@@ -292,6 +292,7 @@ class Home extends Component {
                 type="button"
                 onClick={this.onSearch}
                 bgColor="#909090"
+                data-testid="searchButton"
               >
                 <AiOutlineSearch />
               </SearchBtn>
@@ -314,7 +315,7 @@ class Home extends Component {
                 <AiFillHome fontSize={30} />
               </Icon>
 
-              <Link href="/home" color="white" selected>
+              <Link href="/" color="white" selected>
                 Home
               </Link>
             </EachBar>

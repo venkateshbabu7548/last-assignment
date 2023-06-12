@@ -35,7 +35,7 @@ const SavedVideos = () => (
   <ThemeContext.Consumer>
     {value => {
       const {isDarkModeOn, savedVideos} = value
-      console.log(isDarkModeOn)
+      console.log(savedVideos)
 
       const renderVideosLight = () => (
         <SuccessViewCon>
@@ -72,7 +72,7 @@ const SavedVideos = () => (
       )
 
       const renderLightView = () => (
-        <Down color="#f9f9f9">
+        <Down color="#f9f9f9" data-testid="savedVideos">
           <LeftCon bgColor="#f9f9f9">
             <MenuBarCon>
               <EachBar color="#475569">
@@ -80,7 +80,7 @@ const SavedVideos = () => (
                   <AiFillHome fontSize={30} />
                 </Icon>
 
-                <Link href="/home">Home</Link>
+                <Link href="/">Home</Link>
               </EachBar>
               <EachBar color="#475569">
                 <Icon>
@@ -146,7 +146,7 @@ const SavedVideos = () => (
         </Down>
       )
       const renderDarkView = () => (
-        <Down color="#0f0f0f">
+        <Down color="#0f0f0f" data-testid="savedVideos">
           <LeftCon bgColor="#231f20">
             <MenuBarCon>
               <EachBar>
@@ -154,7 +154,7 @@ const SavedVideos = () => (
                   <AiFillHome fontSize={30} />
                 </Icon>
 
-                <Link href="/home" color="white">
+                <Link href="/" color="white">
                   Home
                 </Link>
               </EachBar>

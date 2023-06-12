@@ -1,14 +1,14 @@
 import styled from 'styled-components'
 
 export const VideoItem = styled.li`
-  display: flex;
-  align-items: center;
   width: 100%;
 
   margin: 20px;
 `
 export const Link = styled.a`
   text-decoration: none;
+  display: flex;
+  align-items: center;
 `
 export const Image = styled.img`
   width: 450px;
@@ -21,7 +21,7 @@ export const ContentCard = styled.div`
   flex-direction: column;
   justify-content: center;
 `
-export const Title = styled.h1`
+export const Title = styled.p`
   font-size: 25px;
   font-weight: 700;
   color: ${props => props.color};
@@ -35,12 +35,16 @@ export const ViewsCon = styled.div`
   display: flex;
   align-items: center;
   color: #606060;
+  border: 1px solid black;
 `
 export const YearCon = styled.ul`
   list-style-type: circle;
   list-style: inside;
   padding: 0;
+
+  border: 1px solid black;
 `
 export const Year = styled.li`
   font-size: 17px;
 `
+export const Publish = styled.p``

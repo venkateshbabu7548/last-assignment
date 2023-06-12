@@ -16,6 +16,7 @@ export const List = styled.ul`
   list-style: inside;
   padding: 10px;
 `
+export const Publish = styled.p``
 export const Thumbnail = styled.img`
   height: 200px;
   width: 320px;

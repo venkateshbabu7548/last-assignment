@@ -104,7 +104,7 @@ class Trending extends Component {
     <FailureCon>
       <FailureImg
         src="https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-light-theme-img.png"
-        alt="failure-image"
+        alt="failure view"
       />
       <FailureHead>Oops! Something Went Wrong</FailureHead>
       <FailureDes>
@@ -143,7 +143,7 @@ class Trending extends Component {
   }
 
   renderDarkView = () => (
-    <Down color="#0f0f0f">
+    <Down color="#0f0f0f" data-testid="trending">
       <LeftCon bgColor="#231f20">
         <MenuBarCon>
           <EachBar>
@@ -218,7 +218,7 @@ class Trending extends Component {
   )
 
   renderLightView = () => (
-    <Down color="#f9f9f9">
+    <Down color="#f9f9f9" data-testid="trending">
       <LeftCon bgColor="#f9f9f9">
         <MenuBarCon>
           <EachBar color="#475569">

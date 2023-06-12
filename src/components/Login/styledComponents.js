@@ -70,6 +70,7 @@ export const LoginButton = styled.button`
   height: 40px;
   cursor: pointer;
   font-size: 15px;
+  color: #ffffff;
 `
 export const CheckBox = styled.input`
   height: 18px;
